@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title></title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script src="js/world.js"></script>
+<script>
+    for(let a = 0; a <= 50; a++) {
+        const x = Math.random() * document.body.clientWidth;
+        const y = Math.random() * document.body.clientHeight;
+
+        new Tree(x, y);
+    }
+
+    for(let a = 0; a <= 10; a++) {
+        const x = Math.random() * document.body.clientWidth;
+        const y = Math.random() * document.body.clientHeight;
+
+        new Insect(x, y);
+    }
+</script>
+</html>
