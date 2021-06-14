@@ -9,13 +9,25 @@ body {
     position: absolute;
     background-image: url('/images/mosquito.png');
     background-size: 100% 100%;
-    right: 0;
-    top: 50px;
     width: 50px;
     height: 50px;
     z-index: 1;
     transform: scale(1);
     animation: insect 1s alternate-reverse infinite;
+}
+
+.insect-death {
+    animation: insect-death 2s linear normal;
+}
+
+@keyframes insect-death {
+    from {
+        transform: rotate(0deg) scale(2);
+    }
+
+    to {
+        transform: rotate(360deg) scale(0);
+    }
 }
 
 @keyframes insect {

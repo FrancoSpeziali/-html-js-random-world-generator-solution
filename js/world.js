@@ -2,6 +2,7 @@ class Tree {
     constructor(x, y) {
         this.node = document.createElement('div');
         this.node.setAttribute('class', 'tree');
+        this.node.style.transform = `scale(${Math.random() + 0.5})`;
         this.treeType = this.getTreeType();
         
         switch(this.treeType) {
@@ -37,12 +38,17 @@ class Insect {
     constructor(x, y) {
         this.node = document.createElement('div');
         this.node.setAttribute('class', 'insect');
+        this.node.onclick = () => this.destroy();
 
         this.render(x, y);
     }
 
-    animate() {
-        
+    destroy() {
+        this.node.classList.add('insect-death');
+
+        setTimeout(() => {
+            this.node.remove();
+        }, 2000);
     }
 
     render(x, y) {
